@@ -3,7 +3,6 @@ from scipy.linalg import solve as slv
 from sympy.solvers import solve
 from sympy import Symbol, re, im
 from math import pow
-import cmath
 
 import numpy as np
 
