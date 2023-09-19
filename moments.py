@@ -1,4 +1,3 @@
-from input import borders
 from scipy.integrate import quad as qd 
 
 def integrand(wf, s):

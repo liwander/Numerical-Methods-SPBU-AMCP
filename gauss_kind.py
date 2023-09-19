@@ -1,4 +1,3 @@
-from input import borders
 from moments import calculateMoments
 from scipy.linalg import solve as slv
 from sympy.solvers import solve
@@ -32,7 +31,7 @@ def findPartition(coefs, deg):
     return solve(x ** deg + coefs[2] * x** 2+ coefs[1] * x + coefs[0], x)
 
 
-def findGaussKindQFCoefficents(wf, nodeNum):
+def findGaussKindQFCoefficents(wf, borders, nodeNum):
     moments = calculateMoments(wf, borders, 2 * nodeNum)
 
     NPCoefs = findNodalPolynomialCoefficents(moments)
