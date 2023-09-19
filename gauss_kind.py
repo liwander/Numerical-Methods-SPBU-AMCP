@@ -1,7 +1,7 @@
 from moments import calculateMoments
 from scipy.linalg import solve as slv
 from sympy.solvers import solve
-from sympy import Symbol
+from sympy import Symbol, re, im
 from math import pow
 import cmath
 
@@ -37,8 +37,8 @@ def findGaussKindQFCoefficents(wf, borders, nodeNum):
     NPCoefs = findNodalPolynomialCoefficents(moments)
 
     nodes = findPartition(NPCoefs, nodeNum)
-    
-    nodes = [nd.real for nd in nodes if nd.imag < 1e-10]
+
+    nodes = [re(nd) for nd in nodes if im(nd) < 1e-10]
 
     matrQFCoefs = np.ndarray((nodeNum, nodeNum))
     b = []
