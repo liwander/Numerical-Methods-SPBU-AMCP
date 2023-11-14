@@ -31,4 +31,4 @@ def runge(f: Callable[[float, vector], vector],
     plt.savefig('./odesf.png')
 
 def runge_kutta_method():
-    runge(f, cauchy_conditions, 1e-2, segm)
+    runge(f, cauchy_conditions, segm, 1e-2)
