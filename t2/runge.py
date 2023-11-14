@@ -25,6 +25,7 @@ def runge(f: Callable[[float, vector], vector],
 
     for i in range(n):
         K = getK(f, x[-1], y[-1], h, s, a, c)
+        print(b.shape, K.shape)
         y = np.append(y,  [y[-1] + h * np.matmul(b, K)], axis=0)
         x = np.append(x,  x[-1] + h)
 
@@ -37,4 +38,4 @@ def runge(f: Callable[[float, vector], vector],
     plt.savefig('./odesf.png')
 
 def runge_kutta_method():
-    runge(f, cauchy_conditions, segm, 1e-2, 2, a, b, c)
+    runge(f, cauchy_conditions, segm, 1e-2, 3, a, b, c)

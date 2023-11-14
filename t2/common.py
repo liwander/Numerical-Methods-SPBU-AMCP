@@ -1,11 +1,11 @@
 import numpy as np
 
-c = 1 / 2
+c = np.array([0, 1 / 2, 1])
 A, B, C = 2, -1, -1
 
-
-a = c
-b = np.array([1 - 1 / ( 2 * c) , 1 / ( 2 * c)])
+a = np.array([[0 , 0], [ 1 / 2, 0], [-1, 2]])
+print(a.shape)
+b = np.array([1 / 6, 2 / 3, 1 / 6])
 
 vector = np.array
 
