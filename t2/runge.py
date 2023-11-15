@@ -68,4 +68,4 @@ def runge(f: Callable[[float, vector], vector],
     # plt.savefig('main_margin.png')
 
 def runge_kutta_method(a, b, c, png_name):
-    runge(f, cauchy_conditions, segm, (1e-1) / 2, len(b), len(b), a, b, c, png_name)
+    runge(f, cauchy_conditions, segm, (1e-2) / 2, len(b), len(b), a, b, c, png_name)
