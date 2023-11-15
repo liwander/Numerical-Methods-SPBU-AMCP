@@ -1,4 +1,4 @@
-from common import *
+from cauchy_problem import *
 import matplotlib.pyplot as plt
 from collections.abc import Callable
 
