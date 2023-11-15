@@ -41,7 +41,6 @@ def runge(f: Callable[[float, vector], vector],
             y2 = np.append(y2,  [y2[-1] + 2 * h * np.matmul(b, K2)], axis=0)
             x2 = np.append(x2,  x2[-1] + 2 * h)
         else:
-            print(x[-1] - x2[-1])
             rx = local_margin(y[-1], y2[-1], p)
             r2 = np.append(r, rx[1], axis=0)
             r = np.append(r, rx[0], axis=0)
@@ -60,7 +59,7 @@ def runge(f: Callable[[float, vector], vector],
     axs[3].set_title('normal step method error margin')
     axs[3].plot(x2, r2)
 
-    plt.savefig('./odessa.png')
+    plt.savefig(f'{png_name}')
 
     # t = np.arange(segment[0], segment[-1] + h, h)
     # z = answer(t).transpose() + 5
@@ -68,5 +67,5 @@ def runge(f: Callable[[float, vector], vector],
 
     # plt.savefig('main_margin.png')
 
-def runge_kutta_method(a, b, c):
-    runge(f, cauchy_conditions, segm, (1e-1) / 2, len(b), len(b), a, b, c)
+def runge_kutta_method(a, b, c, png_name):
+    runge(f, cauchy_conditions, segm, (1e-1) / 2, len(b), len(b), a, b, c, png_name)
